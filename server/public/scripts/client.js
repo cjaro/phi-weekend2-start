@@ -4,7 +4,9 @@ var currentPersonIndex = 0;
 
 $(document).ready(function(){
   // Upon page load, get the data from the server
-  getSomeData();
+  // goGetMeSomeData(); //???????
+  $('.buttonsNextPrevious').on('click', '.next', goNext);
+  $('.buttonsNextPrevious').on('click', '.previous', goPrevious);
 }); //closes document.ready
 
 function getSomeData(){
@@ -14,31 +16,40 @@ function getSomeData(){
     success: function(data){
       // console.log('returned data from server: ', data);
       //data is inside this fxn
-      // phirephitersArray = data.phirephiters; //
+      phirephitersArray = data.phirephiters; //
       // newPeopleArray(phirephitersArray);
       // console.log("this is not working");
       phiCarusol();
       phiButtons(); //new functions??
+      updateMyCarousel();
     } //closes success function
   }); //ajax
 }
 
-function appendDom(person){
+function phiCarousel(){
 for (var i = 0; i < phirephitersArray.length; i++) {
-  $('.carousel-container').append("div class=phipeep");
-}
-  $('#main').append('<div class="phirephiters"></div>');
+  $('.carousel-container').append('<div class="person"></div>');
+
   var $element = $('.carousel-container').children().last();
-  $element.append('<p>' + 'name: ' + person.name + '</p>');
-  $element.append('<p>' + 'git username: ' + person.git_username + '<p>');
-  $element.append('<p>' + 'shoutout: ' + person.shoutout + '</p>');
+
+  $element.append('<button class="previous"></button>');
+
+  $element.append('<p>' + 'name: ' + phirephitersArray.name + '</p>');
+  $element.append('<p>' + 'git username: ' + phirephitersArray.git_username + '<p>');
+  $element.append('<p>' + 'shoutout: ' + phirephitersArray.shoutout + '</p>');
   // console.log(phirephiters);
+  $element.append('<button class="next"></button>');
+
+  $element.hide();
+}
 }
 
 
 // function autoSwitch(){
 //
 // }
+
+//buttons
 
 function goNext(){
   if(currentPersonIndex < phirephitersArray.length-1){
@@ -56,6 +67,7 @@ function goPrevious(){
   }
   updateMyCarousel();
 }
+
 
 
 // want to go one at a time
