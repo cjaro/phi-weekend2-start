@@ -2,8 +2,15 @@
   border-style: 1px solid black;
 }*/
 
-.text {
+.carousel-container {
   text-align: center;
+  height: 150px;
+  border: 1px solid black;
+}
+
+.buttonsNextPrevious {
+  height:100px;
+  border: 1px solid black;
 }
 
 h1 {

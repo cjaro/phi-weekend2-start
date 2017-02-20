@@ -26,21 +26,19 @@ function getSomeData(){
 }
 
 function phiCarousel(){
-for (var i = 0; i < phirephitersArray.length; i++) {
+  for (var i = 0; i < phirephitersArray.length; i++) {
+    var $element = $('.container').children().last();
+    $element.append('<p>' + 'name: ' + phirephitersArray.name + '</p>');
+    $element.append('<p>' + 'git username: ' + phirephitersArray.git_username + '<p>');
+    $element.append('<p>' + 'shoutout: ' + phirephitersArray.shoutout + '</p>');
+    // console.log(phiCarousel());
 
-  // var $element = $('.carousel-container').children().last();
-
-  $('#carousel-container').append('<button class="previous"></button>');
-  $element.append('<p>' + 'name: ' + phirephitersArray.name + '</p>');
-  $element.append('<p>' + 'git username: ' + phirephitersArray.git_username + '<p>');
-  $element.append('<p>' + 'shoutout: ' + phirephitersArray.shoutout + '</p>');
-  // console.log(phirephiters);
-
-  // $element.hide();
+    // $element.hide();
+  }
 }
-}
-$('#buttonsNextPrevious').append('<div class="person"></div>');
-$('#buttonsNextPrevious').append('<button class="next"></button>');
+$('#buttonsNextPrevious').append('<button id="previous"></button>');
+// $('#buttonsNextPrevious').append('<div class="person"></div>');
+$('#buttonsNextPrevious').append('<button id="next"></button>');
 
 
 function goNext(){
@@ -49,7 +47,8 @@ function goNext(){
   } else {
     currentPersonIndex=0;
   }
-  // updateMyCarousel();
+  setInterval(7000);
+  // updateMyCarousel();//????
 }
 function goPrevious(){
   if(displayDiv > 0){
@@ -57,7 +56,8 @@ function goPrevious(){
   } else {
     currentPersonIndex=phirephitersArray.length-1;
   }
-  // updateMyCarousel();
+  setInterval(7000);
+  // updateMyCarousel();//?????
 }
 
 
