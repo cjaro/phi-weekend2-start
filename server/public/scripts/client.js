@@ -1,4 +1,3 @@
-// declare these globally??? Yes! Works!!! mostly
 var phirephitersArray;
 var currentPersonIndex = 0;
 
@@ -21,35 +20,28 @@ function getSomeData(){
       // console.log("this is not working");
       phiCarusol();
       phiButtons(); //new functions??
-      updateMyCarousel();
+      // updateMyCarousel();
     } //closes success function
   }); //ajax
 }
 
 function phiCarousel(){
 for (var i = 0; i < phirephitersArray.length; i++) {
-  $('.carousel-container').append('<div class="person"></div>');
 
-  var $element = $('.carousel-container').children().last();
+  // var $element = $('.carousel-container').children().last();
 
-  $element.append('<button class="previous"></button>');
-
+  $('#carousel-container').append('<button class="previous"></button>');
   $element.append('<p>' + 'name: ' + phirephitersArray.name + '</p>');
   $element.append('<p>' + 'git username: ' + phirephitersArray.git_username + '<p>');
   $element.append('<p>' + 'shoutout: ' + phirephitersArray.shoutout + '</p>');
   // console.log(phirephiters);
-  $element.append('<button class="next"></button>');
 
-  $element.hide();
+  // $element.hide();
 }
 }
+$('#buttonsNextPrevious').append('<div class="person"></div>');
+$('#buttonsNextPrevious').append('<button class="next"></button>');
 
-
-// function autoSwitch(){
-//
-// }
-
-//buttons
 
 function goNext(){
   if(currentPersonIndex < phirephitersArray.length-1){
@@ -57,7 +49,7 @@ function goNext(){
   } else {
     currentPersonIndex=0;
   }
-  updateMyCarousel();
+  // updateMyCarousel();
 }
 function goPrevious(){
   if(displayDiv > 0){
@@ -65,7 +57,7 @@ function goPrevious(){
   } else {
     currentPersonIndex=phirephitersArray.length-1;
   }
-  updateMyCarousel();
+  // updateMyCarousel();
 }
 
 
