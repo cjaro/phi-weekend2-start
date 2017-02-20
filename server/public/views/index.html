@@ -1,15 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Weekend Challenge 2</title>
+<head>
+  <title>Weekend Challenge 2</title>
 
-    <link rel="stylesheet" href="/styles/style.css" />
+  <link rel="stylesheet" href="/styles/style.css" />
 
-    <script type="text/javascript" src="/vendor/jquery.min.js"></script>
-    <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/vendor/jquery.min.js"></script>
+  <script type="text/javascript" src="/scripts/client.js"></script>
 
-  </head>
-  <body>
-    <h1>Weekend Challenge 2</h1>
-  </body>
+</head>
+<body>
+  <h1>Weekend Challenge 2</h1>
+  <!-- <div id="feedbackContainer"></div> -->
+  <div id="main"></div>
+  <div class="carousel-container">
+      <div class="text">Phire Phiters Data</div>
+  </div>
+  <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(i)"></span>
+  </div> -->
+
+  <!-- <button id="buttonPrevious">Previous</button>
+  <button id="buttonNext">Next</button> -->
+</body>
 </html>
+
+
+
+<!-- Example Explained
+The outermost <div>:
+
+Carousels require the use of an id (in this case id="myCarousel") for carousel controls to function properly.
+
+The class="carousel" specifies that this <div> contains a carousel.
+
+The .slide class adds a CSS transition and animation effect, which makes the items slide when showing a new item. Omit this class if you do not want this effect.
+
+The data-ride="carousel" attribute tells Bootstrap to begin animating the carousel immediately when the page loads.
+
+The "Indicators" part:
+
+The indicators are the little dots at the bottom of each slide (which indicates how many slides there is in the carousel, and which slide the user are currently viewing).
+
+The indicators are specified in an ordered list with class .carousel-indicators.
+
+The data-target attribute points to the id of the carousel.
+
+The data-slide-to attribute specifies which slide to go to, when clicking on the specific dot.
+
+The "Wrapper for slides" part:
+
+The slides are specified in a <div> with class .carousel-inner.
+
+The content of each slide is defined in a <div> with class .item. This can be text or images.
+
+The .active class needs to be added to one of the slides. Otherwise, the carousel will not be visible.
+
+The "Left and right controls" part:
+
+This code adds "left" and "right" buttons that allows the user to go back and forth between the slides manually.
+
+The data-slide attribute accepts the keywords "prev" or "next", which alters the slide position relative to its current position. -->
